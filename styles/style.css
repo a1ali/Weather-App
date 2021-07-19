@@ -40,7 +40,6 @@ body {
     display: flex;
     align-items: center;
     flex-direction: row-reverse;
-    padding-top: 20px;
     padding-bottom: 10px;
 
 }
