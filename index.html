@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="/styles/style.css">
+
+    <!-- Weather Icons from https://erikflowers.github.io/weather-icons/ -->
+    <link rel="stylesheet" href="/styles/weather-icons.css">
+    <script src="https://kit.fontawesome.com/ce53eb9020.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+
+        <div class="search-container">
+            <div class="search">
+                <input type="text" id="city" placeholder="Search for a city">
+                <i class="fa fa-search" id="searchIcon" aria-hidden="true"></i>    
+            </div>
+        </div>
+
+        <div class="weathercard-container">
+            <div class="weather-card-wrap">
+                <div class="current-weather">
+
+                    <div class="location">
+                        <i class="fa fa-map-marker" aria-hidden="true"></i>
+                        <h4 id="weatherLocation">New York</h4>
+                    </div>
+                    <div class="weather-icon">
+                        <i class="wi wi-night-sleet" id="iconStyle"></i>
+                    </div>
+                    <div class="weather-degrees">
+                        <h1 id="degrees-amount">72</h1>
+                        <span>&#176;</span>
+                    </div>
+                    <div class="weather-condition">
+                        Partly Cloudy
+                    </div>
+                    <div class="current-date">
+                        07/23
+                    </div>
+    
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="forecast">
+
+            <div class="forecast-card">
+                <div class="forecast-date" id="forecast-day1">07/19</div>
+                <div class="forecast-temp">
+                    <h1 id="forecast-day1-temp">72</h1>
+                    <span>&#176;</span>
+                </div>
+                <div class="forecast-icon" id="forecast-day1-icon">
+                    <i class="wi wi-night-sleet" id="forecast-iconStyle"></i>
+                </div>
+            </div>
+
+            <div class="forecast-card">
+                <div class="forecast-date" id="forecast-day2">07/19</div>
+                <div class="forecast-temp">
+                    <h1 id="forecast-day2-temp">72</h1>
+                    <span>&#176;</span>
+                </div>
+                <div class="forecast-icon" id="forecast-day2-icon">
+                    <i class="wi wi-night-sleet" id="forecast-iconStyle"></i>
+                </div>
+            </div>
+
+
+            <div class="forecast-card">
+                <div class="forecast-date" id="forecast-day3">07/19</div>
+                <div class="forecast-temp">
+                    <h1 id="forecast-day3-temp">72</h1>
+                    <span>&#176;</span>
+                </div>
+                <div class="forecast-icon" id="forecast-day3-icon">
+                    <i class="wi wi-night-sleet" id="forecast-iconStyle"></i>
+                </div>
+            </div>
+
+            <div class="forecast-card">
+                <div class="forecast-date" id="forecast-day4">07/19</div>
+                <div class="forecast-temp">
+                    <h1  id="forecast-day4-temp">72</h1>
+                    <span>&#176;</span>
+                </div>
+                <div class="forecast-icon" id="forecast-day4-icon">
+                    <i class="wi wi-night-sleet" id="forecast-iconStyle"></i>
+                </div>
+            </div>
+
+            <div class="forecast-card">
+                <div class="forecast-date" id="forecast-day5">07/19</div>
+                <div class="forecast-temp">
+                    <h1 id="forecast-day5-temp">72</h1>
+                    <span>&#176;</span>
+                </div>
+                <div class="forecast-icon" id="forecast-day5-icon">
+                    <i class="wi wi-night-sleet" id="forecast-iconStyle"></i>
+                </div>
+            </div>
+
+            <div class="forecast-card">
+                <div class="forecast-date" id="forecast-day6">07/19</div>
+                <div class="forecast-temp">
+                    <h1  id="forecast-day6-temp">72</h1>
+                    <span>&#176;</span>
+                </div>
+                <div class="forecast-icon" id="forecast-day6-icon">
+                    <i class="wi wi-night-sleet" id="forecast-iconStyle"></i>
+                </div>
+            </div>
+
+
+            <div class="forecast-card">
+                <div class="forecast-date" id="forecast-day7">07/19</div>
+                <div class="forecast-temp">
+                    <h1  id="forecast-day7-temp">72</h1>
+                    <span>&#176;</span>
+                </div>
+                <div class="forecast-icon" id="forecast-day7-icon">
+                    <i class="wi wi-owm-210" id="forecast-iconStyle"></i>
+                </div>
+            </div>
+
+ 
+        </div>
+    </div>
+
+    <div class="alert">
+        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+        <span class="msg">Error: Invalid city</span>
+        <span class="close-btn">
+            <span class="fas fa-times"></span>
+        </span>
+    </div>
+
+    <div class="toggle-container">
+        <div class="toggle">
+            <input type="checkbox" id="changeTemp" name="temp"><br>
+            <label for="" class="onbtn">C<span>&#176;</span></label>
+            <label for="" class="offbtn">F<span>&#176;</span></label>
+        </div>
+    </div>
+
+
+    <script type="module" src="/script/index.js"></script>
+</body>
+</html>

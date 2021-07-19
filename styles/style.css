@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: black;
+    --font-family: 'Roboto';
+}
+
+body {
+    overflow-x:hidden; 
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 70px 50% auto;
+    grid-template-areas: 
+    "search"
+    "weatherCard"
+    "forecastCard";
+}
+
+/* Search Container */
+
+.search-container {
+    background-color: black;
+    grid-area: 'search';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+    
+}
+
+.search input {
+    width: 400px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    padding: 20px;
+    outline: none;
+    font-family: var(--font-family);
+    font-weight: 300;
+    font-size: 1.1em;
+    color: white;
+    background-color: rgba(121, 121, 121, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search i {
+    position: absolute;
+    right: 15px;
+    color: white;
+  
+}
+
+/* Current Weather Card */
+
+.weathercard-container {
+    background-color: black;
+    grid-area: 'weatherCard';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-family);
+}
+
+.weather-card-wrap {
+    /* padding: 40px 300px; */
+    padding: 2.3% 25%;
+}
+
+.current-weather {
+    transform-style: preserve-3d;
+    transition: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    padding: 40px 60px;
+    background: rgba( 104, 104, 104, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 10.0px );
+    -webkit-backdrop-filter: blur( 10.0px );
+    border-radius: 50px;
+    border-top: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-left: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.location {
+    display: flex;
+    padding-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.location h4 {
+    padding-left: 5px;
+    font-weight: 100;
+    text-transform: capitalize;
+}
+
+#iconStyle {
+    font-size: 5em;
+    padding-bottom: 10px;
+}
+.weather-degrees {
+    display: flex;
+    font-size: 2.7em;
+}
+
+.weather-degrees h1 {
+    /* font-size: 5em; */
+    position: relative;
+    left: 10px;
+    padding-bottom: 5px;
+}
+
+.weather-degrees span {
+    position: relative;
+    left: 10px;
+    top: 10px;
+}
+
+.weather-condition {
+    font-weight: 300;
+    padding-bottom: 10px;
+    text-transform: capitalize;
+}
+
+.current-date {
+    font-weight: 300;
+    color: rgb(192, 192, 192);
+}
+
+/* Forecast Cards */
+
+.forecast{
+    background-color: var(--bg-color);
+    grid-area: 'forecastCard';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.forecast-card {
+    font-family: var(--font-family);
+    background: rgba( 104, 104, 104, 0.25 );
+    backdrop-filter: blur( 10.0px );
+    -webkit-backdrop-filter: blur( 10.0px );
+    border-radius: 30px;
+    border-top: 1px solid rgba( 255, 255, 255, 0.18 );
+    border-left: 1px solid rgba( 255, 255, 255, 0.18 );
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: -20px;
+    color: white;
+    padding: 40px 40px;
+    margin: 0px 10px;
+    margin-bottom: 10px;
+    transition: 200ms ease;
+}
+
+.forecast-card:hover {
+    transform: scale(1.05);
+}
+
+.forecast-date {
+    font-weight: 100;
+    position: relative;
+    top: -20px;
+}
+
+.forecast-temp {
+    display: flex;
+    position: relative;
+    top: -10px;
+    right: -4px;
+}
+
+.forecast-temp span {
+    font-size: 1.5em;
+}
+
+.forecast-icon {
+    font-size: 3em;
+}
+
+/* Alert Message */
+.alert {
+    font-family: var(--font-family);
+    position: absolute;
+    background: #fd4b4b;
+    padding: 20px 40px;
+    min-width: 320px;
+    right: 0px;
+    top: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+    border-left: 8px solid #d60000;
+    visibility: hidden;
+}
+
+.alert.show{
+    animation: show_slide 1s ease forwards;
+}
+
+.alert.hide {
+    animation: hide_slide 1s ease reverse;
+
+}
+
+@keyframes show_slide {
+    
+    0% {
+        transform: translateX(100%);
+    }
+    40% {
+        transform: translateX(-10%);
+    }
+    80% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes hide_slide {
+    0% {
+        transform: translateX(100%);
+        
+    }   
+}
+
+.alert .fa-exclamation-circle {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ce0000;
+    font-size: 30px;
+}
+
+.alert .msg {
+    padding: 0 20px;
+    font-size: 18px;
+    color: #b80000;
+}
+
+.alert .close-btn {
+    position:absolute;
+    background: #ff6565;
+    padding: 20px 18px;
+    right: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.close-btn .fa-times {
+    color: #ce0000;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+.close-btn:hover {
+    background: #f73131;
+
+    /* background: #ffc766; */
+}
+
+
+/* Units Toggle */
+
+.toggle-container {
+    padding: 20px;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+
+.toggle {
+    font-family: var(--font-family);
+    position: relative;
+    display: inline;
+    
+}
+
+
+input[type="checkbox"] {
+
+    position: relative;
+    width: 80px;
+    height: 40px;
+    -webkit-appearance: none;
+    background: #c6c6c6;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: .5s;
+
+}
+
+input:checked[type="checkbox"] {
+    background: #03a9f4;
+    
+}
+
+input[type="checkbox"]:before {
+    z-index: 2;
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: .5s;
+    transform: scale(1.1);
+    box-shadow: 0 2px 5px rgba(0, 0 , 0, 0.2);
+}
+
+
+input:checked[type="checkbox"]:before {
+    left: 40px;
+}
+
+
+label {
+    position: absolute;
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    pointer-events: none;
+}
+
+.onbtn {
+    bottom: 13px;
+    left: 14px;
+}
+
+.offbtn {
+    bottom: 12px;
+    right: 10px;
+    color: #34495e;
+}
