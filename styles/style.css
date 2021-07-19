@@ -18,7 +18,7 @@ body {
 .container {
     height: 100vh;
     display: grid;
-    grid-template-rows: 70px 50% auto;
+    grid-template-rows: 100px 50% auto;
     grid-template-areas: 
     "search"
     "weatherCard"
